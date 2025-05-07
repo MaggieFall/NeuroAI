@@ -21,6 +21,54 @@ h1 {
 
 p {
   font-size: 1.2rem;
+  /* General Layout */
+section {
+    margin: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* About Section */
+#about {
+    background-color: #ecf0f1;
+    text-align: center;
+}
+
+/* Features Section */
+#features {
+    background-color: #ffffff;
+    padding: 30px;
+}
+
+#features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#features li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #dcdcdc;
+    padding: 30px;
+    text-align: center;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    color: #34495e;
+}
+
   max-width: 600px;
   margin: 0 auto;
   color: #555;
