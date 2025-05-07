@@ -30,9 +30,29 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
-      <h2>Contact Us</h2>
-      <p>For more information, support, or inquiries, reach out to us:</p>
-      <p>Email: support@neuroai.com</p>
-  </section>
+ <section id="contact">
+  <h2>Contact Us</h2>
+  <p>For more information, support, or inquiries, reach out to us:</p>
+  <p>Email: support@neuroai.com</p>
+
+  <button id="contactButton">Contact Us</button>
+
+  <div id="contactForm" style="display:none;">
+      <form>
+          <label for="email">Your Email:</label><br>
+          <input type="email" id="email" name="email" required><br><br>
+          <button type="submit">Submit</button>
+      </form>
+  </div>
+</section>
+    <script>
+      document.getElementById('contactButton').onclick = function() {
+        var form = document.getElementById('contactForm');
+        if (form.style.display === 'none') {
+          form.style.display = 'block';
+        } else {
+          form.style.display = 'none';
+        }
+      };
+    </script>
 </html>
