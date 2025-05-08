@@ -37,4 +37,16 @@ Early-stage prototype development is in progress. Cloud setup and data simulatio
 
 ### Let’s Build Mental Health Solutions That Understand Us.
 
+### Mental Health Script Engine
+
+**What it does:**  
+This module provides structured, clinically-informed guidance based on the user’s emotional input. Think of it as the brain behind the heart—delivering evidence-based advice while still sounding human.
+
+**Key features:**  
+- Dynamic script routing is based on the detected emotional state.  
+- Empathetic response generation tailored for stress, anxiety, and depression triggers.  
+- Built-in crisis escalation protocol (e.g., “Would you like help now?” → connects to emergency services or a live responder if needed).  
+- Microsoft Azure Content Moderator for safety checks.  
+- Uses Microsoft’s Language Understanding (LUIS) for intent recognition and smart reply control.
+
 
