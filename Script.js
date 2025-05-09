@@ -1,32 +1,86 @@
-console.log("NeuroAI script loaded successfully");
+// Add messages to chat window
+function addMessage(message, sender = 'bot') {
+  const chat = document.getElementById('chat');
+  const msgDiv = document.createElement('div');
+  msgDiv.className = `message ${sender}`;
+  msgDiv.innerText = message;
+  chat.appendChild(msgDiv);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+// Handle send button
 function sendMessage() {
-  const userInput =
-    document.getElementById("user-input").value.trim
-  ();
-  if (!userInput) return;
+  const input = document.getElementById('userInput');
+  const message = input.value.trim();
+  if (!message) return;
 
-  const chatDisplay =
-    document.getElementById("chat-display");
+  addMessage(message, 'user');
+  input.value = '';
 
-  //Display user message
-  chatDisplay.innerHTML += '<div><strong>You:</
-    strong> ${userInput}</div>';
-
-  document.getElementById("user-input").value =
-    "";
-  chatDisplay.scrollTop =
-    chatDisplay.scrollHeight;}
-
-function getAIResponse(message) {
-  //Simple emotional response demo
-  const lower = message.toLowerCase();
-  if (lower.includes("sad") ||
-      lower.includes("tired")) {
-    return "I'm here for you. Would you like to talk about it?";
-  } else if (lower.includes("anxious") ||
-             lower.includes("scared")) {
-    return "Take a deep breath. Everything is going to be okay, you are not alone.";
+  // Basic AI logic
+  const lowerMsg = message.toLowerCase();
+  if (lowerMsg.includes('hello') || lowerMsg.includes('hi')) {
+    addMessage("Hi there! Ready for your daily check-in?");
+    dailyCheckIn();
+  } else if (lowerMsg.includes('check-in')) {
+    dailyCheckIn();
   } else {
-    return "Tell me more. I'm listening.";
+    addMessage("I'm here to support you. You can type 'check-in' or say how you feel.");
   }
 }
+
+// Daily Check-in Logic
+const dailyCheckInOptions = ['Happy', 'Anxious', 'Sad', 'Tired', 'Angry', 'Numb'];
+
+function dailyCheckIn() {
+  addMessage("How are you feeling today?");
+  const chat = document.getElementById('chat');
+  const btnContainer = document.createElement('div');
+  btnContainer.className = 'btn-group';
+
+  dailyCheckInOptions.forEach(option => {
+    const btn = document.createElement("button");
+    btn.innerText = option;
+    btn.className = "checkin-btn";
+    btn.onclick = () => handleMood(option);
+    btnContainer.appendChild(btn);
+  });
+
+  chat.appendChild(btnContainer);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function handleMood(mood) {
+  addMessage(`You chose: ${mood}`, 'user');
+  let response = "";
+
+  switch (mood) {
+    case 'Happy':
+      response = "That's beautiful to hear! Keep spreading joy.";
+      break;
+    case 'Anxious':
+      response = "I’m right here. Would you like a short breathing or grounding activity?";
+      break;
+    case 'Sad':
+      response = "Sadness is real. Want to chat more or try writing a short reflection?";
+      break;
+    case 'Tired':
+      response = "You matter. Maybe a short break or rest will help.";
+      break;
+    case 'Angry':
+      response = "Anger tells us something. Want to unpack it or redirect it together?";
+      break;
+    case 'Numb':
+      response = "Feeling nothing can feel heavy, too. Let’s gently reconnect, if you’d like.";
+      break;
+  }
+
+  addMessage(response, 'bot');
+}
+
+// Handle Enter key
+document.getElementById("userInput").addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    sendMessage();
+  }
+});
