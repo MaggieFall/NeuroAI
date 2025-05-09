@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mood Log</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>Log Your Mood</h2>
+    <form>
+      <label for="mood">How are you feeling today?</label>
+      <select id="mood" name="mood">
+        <option value="">--Choose Mood--</option>
+        <option value="happy">Happy</option>
+        <option value="sad">Sad</option>
+        <option value="angry">Angry</option>
+        <option value="anxious">Anxious</option>
+        <option value="excited">Excited</option>
+      </select>
+
+      <label for="notes">Any notes you'd like to add?</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Write here..."></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
+
