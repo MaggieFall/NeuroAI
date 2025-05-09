@@ -195,3 +195,32 @@ nav a {
 .form-container button:hover {
   background-color: #006666;
 }
+.biometric-sim {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.fingerprint {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: url('https://i.imgur.com/JfPpwOA.png') no-repeat center;
+  background-size: cover;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.fingerprint.scanning {
+  animation: scanGlow 1s infinite;
+}
+
+@keyframes scanGlow {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(1.5); }
+  100% { filter: brightness(1); }
+}
