@@ -8,7 +8,7 @@ body {
 
 /* Header section */
 header {
-  background-color: #009688; /* Teal */
+  background-color: #80cbc4; /* Teal */
   color: white;
   padding: 1rem;
   text-align: center;
@@ -33,7 +33,7 @@ header {
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 1rem;
-  background: #e0f2f1; /* Light Teal */
+  background: #b2dfdb; /* Light Teal */
 }
 
 /* User message styles */
@@ -72,7 +72,7 @@ button {
 
 /* Navigation links */
 nav {
-  background: #e0f2f1; /* Light Teal */
+  background: #b2dfdb; /* Light Teal */
   padding: 0.5rem;
   text-align: center;
 }
@@ -80,6 +80,6 @@ nav {
 nav a {
   margin: 0 1rem;
   text-decoration: none;
-  color: #009688; /* Teal */
+  color: #80cbc4; /* Teal */
   font-weight: bold;
 }
