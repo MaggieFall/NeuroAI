@@ -82,6 +82,21 @@
     console.error("Chart canvas not found.");
   }
 </script>
+  <script>
+  function simulateScan() {
+    const fingerprint = document.querySelector('.fingerprint');
+    const status = document.getElementById('scan-status');
+
+    fingerprint.classList.add('scanning');
+    status.textContent = 'Scanning...';
+
+    setTimeout(() => {
+      fingerprint.classList.remove('scanning');
+      status.textContent = 'Access Granted: Identity Verified!';
+    }, 3000);
+  }
+</script>
+
 
 </body>
 </html>
