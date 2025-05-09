@@ -7,13 +7,13 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      background: #eef7f7;
       margin: 0;
       padding: 0;
     }
 
     header {
-      background-color: #4b0082;
+      background-color: #5aada0;
       color: white;
       padding: 1rem;
       text-align: center;
@@ -24,19 +24,19 @@
       max-width: 600px;
       margin: 2rem auto;
       background: white;
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .chat-box {
       height: 400px;
       overflow-y: auto;
-      border: 1px solid #ccc;
+      border: 1px solid #cce3e0;
       padding: 1rem;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-bottom: 1rem;
-      background: #f9f9f9;
+      background: #f9fcfc;
     }
 
     .message {
@@ -45,7 +45,7 @@
 
     .user {
       text-align: right;
-      color: #4b0082;
+      color: #3d8579;
     }
 
     .bot {
@@ -60,22 +60,35 @@
 
     input[type="text"] {
       flex: 1;
-      padding: 0.5rem;
-      border: 1px solid #aaa;
-      border-radius: 4px;
+      padding: 0.6rem;
+      border: 1px solid #a8d5cf;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #ffffff;
+      transition: border 0.2s ease-in-out;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #5aada0;
     }
 
     button {
-      padding: 0.5rem 1rem;
-      background: #4b0082;
+      padding: 0.6rem 1.2rem;
+      background: #5aada0;
       color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 8px;
       cursor: pointer;
+      transition: background 0.2s ease-in-out;
+    }
+
+    button:hover {
+      background: #48998e;
     }
 
     nav {
-      background: #eee;
+      background: #e6f1f0;
       padding: 0.5rem;
       text-align: center;
     }
@@ -83,7 +96,7 @@
     nav a {
       margin: 0 1rem;
       text-decoration: none;
-      color: #4b0082;
+      color: #3d8579;
       font-weight: bold;
     }
   </style>
@@ -111,48 +124,7 @@
   </div>
 </div>
 
-<script>
-  function sendMessage() {
-    const input = document.getElementById("user-input");
-    const chatBox = document.getElementById("chat-box");
-    const userMessage = input.value.trim();
-
-    if (userMessage) {
-      // User message
-      const userDiv = document.createElement("div");
-      userDiv.className = "message user";
-      userDiv.textContent = userMessage;
-      chatBox.appendChild(userDiv);
-
-      // Bot reply
-      const botDiv = document.createElement("div");
-      botDiv.className = "message bot";
-
-      const msg = userMessage.toLowerCase();
-
-      if (msg.includes("sad") || msg.includes("depressed") || msg.includes("anxious")) {
-        botDiv.innerHTML = `I'm sorry you're feeling this way. 
-Would you like to talk to someone or try a calming exercise?<br>
-<button onclick="startBreathing()">Try Breathing Exercise</button>`;
-
-      } else if (msg.includes("happy") || msg.includes("excited") || msg.includes("good")) {
-        botDiv.textContent = "That's wonderful! Want to log your mood or share more about your day?";
-      } else if (msg.includes("help") || msg.includes("support")) {
-        botDiv.textContent = "I'm here to support you. You can talk, do a quick mood check, or ask about healthy routines.";
-      } else if (msg.includes("lonely") || msg.includes("alone")) {
-        botDiv.textContent = "You're not alone right now. I’m with you. Would you like to try journaling or connect to a support line?";
-      } else if (msg.includes("angry") || msg.includes("frustrated")) {
-        botDiv.textContent = "That sounds tough. Let’s try some breathing techniques, or you can just vent here. I’m listening.";
-      } else {
-        botDiv.textContent = "Thanks for opening up. You can tell me more, or try a mood tracker, deep breathing, or contact a mental health guide.";
-      }
-
-      chatBox.appendChild(botDiv);
-      input.value = "";
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
-  }
-  <!-- Breathing Modal -->
+<!-- Breathing Modal -->
 <div id="breathing-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
 background-color:rgba(0,0,0,0.8); display:flex; justify-content:center; align-items:center; z-index:1000;">
   <div style="background:white; padding:30px; border-radius:12px; text-align:center;">
@@ -173,6 +145,44 @@ background-color:rgba(0,0,0,0.8); display:flex; justify-content:center; align-it
 </style>
 
 <script>
+  function sendMessage() {
+    const input = document.getElementById("user-input");
+    const chatBox = document.getElementById("chat-box");
+    const userMessage = input.value.trim();
+
+    if (userMessage) {
+      const userDiv = document.createElement("div");
+      userDiv.className = "message user";
+      userDiv.textContent = userMessage;
+      chatBox.appendChild(userDiv);
+
+      const botDiv = document.createElement("div");
+      botDiv.className = "message bot";
+
+      const msg = userMessage.toLowerCase();
+
+      if (msg.includes("sad") || msg.includes("depressed") || msg.includes("anxious")) {
+        botDiv.innerHTML = `I'm sorry you're feeling this way. 
+Would you like to talk to someone or try a calming exercise?<br>
+<button onclick="startBreathing()">Try Breathing Exercise</button>`;
+      } else if (msg.includes("happy") || msg.includes("excited") || msg.includes("good")) {
+        botDiv.textContent = "That's wonderful! Want to log your mood or share more about your day?";
+      } else if (msg.includes("help") || msg.includes("support")) {
+        botDiv.textContent = "I'm here to support you. You can talk, do a quick mood check, or ask about healthy routines.";
+      } else if (msg.includes("lonely") || msg.includes("alone")) {
+        botDiv.textContent = "You're not alone right now. I’m with you. Would you like to try journaling or connect to a support line?";
+      } else if (msg.includes("angry") || msg.includes("frustrated")) {
+        botDiv.textContent = "That sounds tough. Let’s try some breathing techniques, or you can vent here. I’m listening.";
+      } else {
+        botDiv.textContent = "Thanks for opening up. You can tell me more, or try a mood tracker, deep breathing, or contact a mental health guide.";
+      }
+
+      chatBox.appendChild(botDiv);
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  }
+
   function startBreathing() {
     document.getElementById("breathing-modal").style.display = "flex";
   }
@@ -181,9 +191,6 @@ background-color:rgba(0,0,0,0.8); display:flex; justify-content:center; align-it
     document.getElementById("breathing-modal").style.display = "none";
   }
 </script>
-
-
-
 
 </body>
 </html>
