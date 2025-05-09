@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NeuroAI - Chatbot Support</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #4b0082;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .chat-container {
+      width: 90%;
+      max-width: 600px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .chat-box {
+      height: 400px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      background: #f9f9f9;
+    }
+
+    .message {
+      margin-bottom: 1rem;
+    }
+
+    .user {
+      text-align: right;
+      color: #4b0082;
+    }
+
+    .bot {
+      text-align: left;
+      color: #333;
+    }
+
+    .chat-input {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      background: #4b0082;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    nav {
+      background: #eee;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #4b0082;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>NeuroAI Support Chatbot</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="chatbot.html">Chatbot</a>
+  <a href="dashboard.html">Dashboard</a>
+</nav>
+
+<div class="chat-container">
+  <div class="chat-box" id="chat-box">
+    <div class="message bot">Hello! I'm your NeuroAI assistant. How are you feeling today?</div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="user-input" placeholder="Type your message here..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script>
+  function sendMessage() {
+    const input = document.getElementById("user-input");
+    const chatBox = document.getElementById("chat-box");
+    const userMessage = input.value.trim();
+
+    if (userMessage) {
+      // User message
+      const userDiv = document.createElement("div");
+      userDiv.className = "message user";
+      userDiv.textContent = userMessage;
+      chatBox.appendChild(userDiv);
+
+      // Bot reply
+      const botDiv = document.createElement("div");
+      botDiv.className = "message bot";
+
+      const msg = userMessage.toLowerCase();
+
+      if (msg.includes("sad") || msg.includes("depressed") || msg.includes("anxious")) {
+        botDiv.innerHTML = `I'm sorry you're feeling this way. 
+Would you like to talk to someone or try a calming exercise?<br>
+<button onclick="startBreathing()">Try Breathing Exercise</button>`;
+
+      } else if (msg.includes("happy") || msg.includes("excited") || msg.includes("good")) {
+        botDiv.textContent = "That's wonderful! Want to log your mood or share more about your day?";
+      } else if (msg.includes("help") || msg.includes("support")) {
+        botDiv.textContent = "I'm here to support you. You can talk, do a quick mood check, or ask about healthy routines.";
+      } else if (msg.includes("lonely") || msg.includes("alone")) {
+        botDiv.textContent = "You're not alone right now. I’m with you. Would you like to try journaling or connect to a support line?";
+      } else if (msg.includes("angry") || msg.includes("frustrated")) {
+        botDiv.textContent = "That sounds tough. Let’s try some breathing techniques, or you can just vent here. I’m listening.";
+      } else {
+        botDiv.textContent = "Thanks for opening up. You can tell me more, or try a mood tracker, deep breathing, or contact a mental health guide.";
+      }
+
+      chatBox.appendChild(botDiv);
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  }
+  <!-- Breathing Modal -->
+<div id="breathing-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+background-color:rgba(0,0,0,0.8); display:flex; justify-content:center; align-items:center; z-index:1000;">
+  <div style="background:white; padding:30px; border-radius:12px; text-align:center;">
+    <h3>Breathing Exercise</h3>
+    <div id="circle" style="width:100px; height:100px; border-radius:50%; background:#72c9c9; margin:20px auto;
+    animation: breathe 8s ease-in-out infinite;"></div>
+    <p>Inhale... Exhale...</p>
+    <button onclick="closeBreathing()">Close</button>
+  </div>
+</div>
+
+<style>
+@keyframes breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+</style>
+
+<script>
+  function startBreathing() {
+    document.getElementById("breathing-modal").style.display = "flex";
+  }
+
+  function closeBreathing() {
+    document.getElementById("breathing-modal").style.display = "none";
+  }
+</script>
+
+
+
+
+</body>
+</html>
