@@ -1,144 +1,78 @@
-/* Reset some default styles */
-body, h1, p {
+/* Update primary background color */
+body {
+  font-family: Arial, sans-serif;
+  background: #e0f2f1; /* Light Teal */
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
 }
 
-body {
-  background: linear-gradient(to right, #dfe9f3, #ffffff);
-  color: #333;
-  line-height: 1.6;
-  padding: 2rem;
+/* Header section */
+header {
+  background-color: #009688; /* Teal */
+  color: white;
+  padding: 1rem;
   text-align: center;
 }
 
-h1 {
-  font-size: 2.5rem;
-  color: #1a73e8;
-  margin-bottom: 1rem;
-}
-
-p {
-  font-size: 1.2rem;
-  .chat-container {
+/* Chatbox and container */
+.chat-container {
+  width: 90%;
   max-width: 600px;
-  margin: 40px auto;
-  background: #ffffff;
+  margin: 2rem auto;
+  background: white;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.chat-display {
-  height: 300px;
+/* Chatbox itself */
+.chat-box {
+  height: 400px;
   overflow-y: auto;
-  border: 1px solid #eee;
-  padding: 10px;
-  margin-bottom: 10px;
-  background: #e0f2f1;
-  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #e0f2f1; /* Light Teal */
 }
 
+/* User message styles */
+.message.user {
+  text-align: right;
+  color: #004d40; /* Dark Teal */
+}
+
+/* Bot message styles */
+.message.bot {
+  text-align: left;
+  color: #004d40; /* Dark Teal */
+}
+
+/* Chat input styles */
 .chat-input {
   display: flex;
-  gap: 10px;
+  gap: 0.5rem;
 }
 
-.chat-input input {
+input[type="text"] {
   flex: 1;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
 }
 
-.chat-input button {
-  padding: 10px 20px;
-  background-color: #009688;
+button {
+  padding: 0.5rem 1rem;
+  background: #00796b; /* Dark Teal */
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-  /* General Layout */
-section {
-    margin: 40px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-}
-
-h2 {
-    color: #2c3e50;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-
-/* About Section */
-#about {
-    background-color: #ecf0f1;
-    text-align: center;
-}
-
-/* Features Section */
-#features {
-    background-color: #ffffff;
-    padding: 30px;
-}
-
-#features ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#features li {
-    font-size: 1.2rem;
-    margin: 10px 0;
-}
-
-/* Contact Section */
-#contact {
-    background-color: #dcdcdc;
-    padding: 30px;
-    text-align: center;
-}
-
-#contact p {
-    font-size: 1.1rem;
-    color: #34495e;
-}
-
-  max-width: 600px;
-  margin: 0 auto;
-  color: #555;
-}
-
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 12px;
-  background-color: #e0f2f1;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f4f4f8;
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
-
-header {
-  background-color: #00796b;
-  color: white;
-  padding: 1.5rem;
-  text-align: center;
-}
-
+/* Navigation links */
 nav {
-  background: #eee;
+  background: #e0f2f1; /* Light Teal */
   padding: 0.5rem;
   text-align: center;
 }
@@ -146,40 +80,6 @@ nav {
 nav a {
   margin: 0 1rem;
   text-decoration: none;
-  color: #00796b;
+  color: #009688; /* Teal */
   font-weight: bold;
-}
-
-.dashboard {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem;
-}
-
-.welcome {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-.card {
-  background: white;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: scale(1.02);
-}
-
-.card h3 {
-  color: #00796b;
-  margin-bottom: 0.5rem;
 }
