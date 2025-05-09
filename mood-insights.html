@@ -52,49 +52,36 @@
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-  const ctx = document.getElementById('moodChart').getContext('2d');
-
-  const moodChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Mon 😊', 'Tue 😌', 'Wed 😟', 'Thu 😄', 'Fri 😐', 'Sat 🙂', 'Sun 😢'],
-      datasets: [
-        {
-          label: 'Mood Score (1–5)',
-          data: [3, 4, 2, 5, 3, 4, 1],
-          backgroundColor: [
-            '#B2DFDB', '#80CBC4', '#4DB6AC', '#26A69A', '#009688', '#00897B', '#00796B'
-          ],
-          borderRadius: 8
-        },
-        {
-          type: 'line',
-          label: 'Mood Trend',
-          data: [3, 3.5, 3, 3.5, 3.4, 3.2, 3],
-          borderColor: '#004D40',
+ <script>
+  const ctx = document.getElementById('moodChart')?.getContext('2d');
+  if (ctx) {
+    const moodChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Mood Score',
+          data: [3, 4, 2, 5, 4, 3, 5],
+          backgroundColor: 'rgba(0, 150, 136, 0.2)',
+          borderColor: '#009688',
           borderWidth: 2,
-          tension: 0.3,
-          fill: false
-        }
-      ]
-    },
-    options: {
-      plugins: {
-        tooltip: {
-          callbacks: {
-            title: function(tooltipItems) {
-              const moods = ['Happy', 'Calm', 'Stressed', 'Excited', 'Neutral', 'Content', 'Sad'];
-              return `Mood: ${moods[tooltipItems[0].dataIndex]}`;
-            }
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 5
           }
         }
       }
-    }
-  });
+    });
+  } else {
+    console.error("Chart canvas not found.");
+  }
 </script>
-
-
 
 </body>
 </html>
