@@ -10,7 +10,7 @@
 - **Biomarker Identification & Predictive Diagnostics**  
   Uses ML models trained on neuroimaging, biochemical, and genetic data to detect early signs of mental health conditions.
 
-- **Emotional AI & Therapeutic Interaction**  
+- **Emotional AI & Empathitec Response System**  
   Offers empathetic, real-time therapeutic conversations with non-verbal cue interpretation for deeper mental health support.
 
 - **Symptom Checker & Visual Mental Health Assistant**  
@@ -25,13 +25,27 @@
 - **Cloud-Enabled & Scalable Infrastructure**  
   Built with Python, TensorFlow, React, and integrated with Microsoft Azure for secure, real-time deployment.
 
+  ## Integration with Labs and Diagnostic Tools
+
+NeuroAI supports voluntary, secure onboarding and integration with diagnostic tools and healthcare systems.
+
+- **IoT Devices & Wearables**: Connects to wearables and devices that track vitals like glucose levels, hormone balance, and heart rate.
+- **DNA & Blood Test Integration**: Collects DNA or test results from external labs using encrypted APIs.
+- **Relevant Biomarker Filtering**: Pulls only necessary data such as genetic predisposition markers, stress indicators, and meditation response signals.
+- **Encrypted API Integration**: Links securely to labs, healthcare databases, or biometric platforms.
+- **AI Biomarker Engine**: Processes this data to personalize recommendations for physical and mental health.
+- **Flexible Storage**: Supports local and cloud-based storage, controlled by the user.
+
+This ensures the system stays lightweight while offering advanced support without high infrastructure costs.
+
+
 ## Vision
 
 NeuroAI exists to bridge the mental health access gap by delivering inclusive, intelligent, and culturally aware care, right from your device.
 
 ## Status
 
-Early-stage prototype development is in progress. Cloud setup and data simulation tools are underway.
+The project is in the prototyping phase. A lightweight frontend has been created using HTML, CSS, and JavaScript to demonstrate core functionality. No machine learning model is trained yet simulated data is used for demonstration. Full AI capabilities and diagnostics integration are part of future development.
 
 ---
 
