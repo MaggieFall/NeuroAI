@@ -45,7 +45,7 @@ NeuroAI exists to bridge the mental health access gap by delivering inclusive, i
 
 ## Status
 
-The project is in the prototyping phase. A lightweight frontend has been created using HTML, CSS, and JavaScript to demonstrate core functionality. No machine learning model is trained yet simulated data is used for demonstration. Full AI capabilities and diagnostics integration are part of future development.
+The project is in the prototyping phase. A lightweight frontend has been created using HTML, CSS, and JavaScript to demonstrate core functionality. No machine learning model is trained yet, simulated data is used for demonstration. Full AI capabilities and diagnostics integration are part of future development.
 
 ---
 
@@ -53,14 +53,6 @@ The project is in the prototyping phase. A lightweight frontend has been created
 
 ### Mental Health Script Engine
 
-**What it does:**  
-This module provides structured, clinically-informed guidance based on the user’s emotional input. Think of it as the brain behind the heart—delivering evidence-based advice while still sounding human.
 
-**Key features:**  
-- Dynamic script routing is based on the detected emotional state.  
-- Empathetic response generation tailored for stress, anxiety, and depression triggers.  
-- Built-in crisis escalation protocol (e.g., “Would you like help now?” → connects to emergency services or a live responder if needed).  
-- Microsoft Azure Content Moderator for safety checks.  
-- Uses Microsoft’s Language Understanding (LUIS) for intent recognition and smart reply control.
 
 
