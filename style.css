@@ -83,3 +83,28 @@ nav a {
   color: #80cbc4; /* Teal */
   font-weight: bold;
 }
+/* ================================
+   DASHBOARD CARDS SECTION
+   ================================= */
+
+.dashboard-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+}
+
+.card {
+  flex: 1;
+  background-color: #e0f7f7; /* light teal */
+  padding: 20px;
+  margin: 10px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
